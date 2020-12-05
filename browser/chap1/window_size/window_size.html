@@ -6,8 +6,9 @@
     <title>Document</title>
     <style type="text/css">
         body{margin:0;}
-        div{width: 400px; background-color:yellowgreen; }
+        div{display:inline-block; padding: 16px; font-size: 28px; background-color:thistle; }
         ul,li{list-style: none;}
+        ul{padding-left: 0;}
     </style>
 </head>
 <body>
@@ -18,14 +19,14 @@
         const contents = document.querySelector('#contents')
         function createHTMLString(){
             contents.innerHTML = `
-                <li>window.screen: ${window.screen.availWidth}, ${window.screen.availHeight}</li>
-                <li>window.outer: ${window.outerWidth}, ${window.outerHeight}</li>
-                <li>window.inner: ${window.innerWidth}, ${window.innerHeight}</li>
-                <li>documentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientWidth}</li>
+                <li>Window.screen: ${window.screen.width}, ${window.screen.height}</li>
+                <li>Window.outer: ${window.outerWidth}, ${window.outerHeight}</li>
+                <li>Window.inner: ${window.innerWidth}, ${window.innerHeight}</li>
+                <li>DocumentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientWidth}</li>
             `
         }
         createHTMLString()
-        window.addEventListener('resize', ()=>{
+        window.addEventListener('resize', () => {
             createHTMLString()
         })
         
