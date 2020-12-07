@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #000; /*overflow: hidden; 스크롤 y 못하게 하기*/}
+        aside{position: fixed; top: 20px; right: 20px; }
+        button{cursor: pointer;}
+        .box{background: #ffe7c7; width: 200px; height: 200px; border-radius: 8px; margin-bottom: 5px;}
+        .click{background: #fe956f;}
+    </style>
+</head>
+<body>
+    <aside>
+        <button class="scrollBy100">Scroll by 100px</button>
+        <button class="scrollTo100">Scroll to 100px</button>
+        <button class="scrollInTo">Scroll into click</button>
+    </aside>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box click"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        const click = document.querySelector('.click')
+        click.addEventListener('click', (e)=>{
+            const rect = click.getBoundingClientRect()
+            console.log(rect)
+            console.log(`${e.clientX}, ${e.clientY}`)
+            console.log(`${e.pageX}, ${e.pageY}`)
+        })
+
+        const scrollBy100 = document.querySelector('.scrollBy100')
+        const scrollTo100 = document.querySelector('.scrollTo100')
+        const scrollInTo = document.querySelector('.scrollInTo')
+        scrollBy100.addEventListener('click', () => {
+            window.scrollBy({top: 500, left: 0, behavior:"smooth"})
+        })
+        scrollTo100.addEventListener('click', () => {
+            window.scroll(0, 100)
+        })
+        scrollInTo.addEventListener('click', () => {
+            click.scrollIntoView()
+        })
+    </script>
+</body>
+</html>

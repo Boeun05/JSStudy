@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #000; /*overflow: hidden; 스크롤 y 못하게 하기*/}
+        .box{background: #ffe7c7; width: 200px; height: 200px; border-radius: 8px; margin-bottom: 5px;}
+        .click{background: #fe956f;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box click"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        const click = document.querySelector('.click')
+        click.addEventListener('click', (e)=>{
+            const rect = click.getBoundingClientRect()
+            console.log(rect)
+            console.log(`${e.clientX}, ${e.clientY}`)
+            console.log(`${e.pageX}, ${e.pageY}`)
+        })
+    </script>
+</body>
+</html>
