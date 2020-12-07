@@ -1,2 +1,2 @@
-#JS Study
-##browser 101
+# JS Study
+## browser 101
