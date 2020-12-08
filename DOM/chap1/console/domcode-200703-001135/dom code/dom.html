@@ -39,5 +39,18 @@
       <h3>Don't forget to code your dream</h3>
     </section>
     <span>Hello World!</span>
+    <script>
+      const section = document.querySelector('section')
+      const h2 = document.createElement('h2')
+      const h3 = document.querySelector('h3')
+      h2.setAttribute('class', 'title')
+      h2.textContent = 'This is a title'
+      section.insertBefore(h2, h3)
+      section.removeChild(h2)
+      //const image = document.querySelector('img') <= 이렇게 불렀을 시 제일 처음에 나타나는 요소가 선택됨
+      const brand = document.getElementById('brand')
+      const image = document.querySelector('img[src="img/avatar.png"]') //<= 이렇게 속성값으로 해당하는 요소를 부를 수 있다
+      console.log(image)
+    </script>
   </body>
 </html>
